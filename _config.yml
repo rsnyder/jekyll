@@ -1,1 +1,4 @@
+title: My Jekyll Site
+description: A simple website powered by GitHub Pages and Jekyll
 theme: minima
+show_excerpts: true
