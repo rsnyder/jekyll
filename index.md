@@ -1,5 +1,2 @@
-Before
----
-Middle
 ---
 After
