@@ -95,11 +95,10 @@
     </footer>
 
     <script type="module">
-      import { convertTags } from '{{ "/static/js/index.js" | relative_url }}'
-      const contentSelector = '{{ site.content_selector }}'
-      const content = document.querySelector(contentSelector)
+      import { restructure, makeEntityPopups } from 'https://ifc.juncture-digital.org/js/index.js'
+      const content = document.querySelector('{{ site.content_selector }}')
       console.log(content)
-      convertTags(content)
+      restructure(content)
     </script>
 
   </body>
