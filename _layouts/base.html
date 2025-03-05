@@ -97,8 +97,9 @@
     <script type="module">
       import { convertTags } from '{{ "/static/js/index.js" | relative_url }}'
       const contentSelector = '{{ site.content_selector }}'
-      console.log(contentSelector)
-      console.log(convertTags)
+      const content = document.querySelector(contentSelector)
+      console.log(content)
+      convertTags(content)
     </script>
 
   </body>

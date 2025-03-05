@@ -143,9 +143,9 @@ const parseCodeEl = (el) => {
 }
 
 // convert <code> tags to HTML iframe elements
-const convertTags = () => {
+const convertTags = (rootEl) => {
   let base = document.querySelector('base')?.getAttribute('href')
-  document.body.querySelectorAll('p > code').forEach(code => {
+  rootEl.querySelectorAll('p > code').forEach(code => {
     let tokens = []
     code.textContent.replace(/”/g,'"').replace(/”/g,'"').replace(/’/g,"'").match(/[^\s"]+|"([^"]*)"/gmi)?.filter(t => t).forEach(token => {
       if (tokens.length > 0 && tokens[tokens.length-1].indexOf('=') === tokens[tokens.length-1].length-1) tokens[tokens.length-1] = `${tokens[tokens.length-1]}${token}`
