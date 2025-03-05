@@ -2,6 +2,7 @@ console.log('index.js');
 
 // convert <code> tags to HTML iframe elements
 const convertTags = () => {
+  console.log('convertTags');
   let base = document.querySelector('base')?.getAttribute('href')
   document.body.querySelectorAll('p > code').forEach(code => {
     console.log('code', code)
