@@ -94,10 +94,12 @@
     
     </footer>
 
-    <script type="module">
-      import 'https://ifc.juncture-digital.org/js/index.js'
-      window.contentSelector = '{{ site.content_selector }}'
+    <script>window.contentSelector = '{{ site.content_selector }}'</script>
+    <script type="module" src="https://ifc.juncture-digital.org/js/index.js"></script>
+    <script>
       /*
+      window.contentSelector = '{{ site.content_selector }}'
+      import 'https://ifc.juncture-digital.org/js/index.js'
       const content = document.querySelector('{{ site.content_selector }}')
       if (content) {
         const restructured = restructure(content)
