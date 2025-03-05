@@ -170,4 +170,4 @@ const convertTags = () => {
   })
 }
 
-convertTags()
+export { convertTags }

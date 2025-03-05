@@ -15,3 +15,5 @@ show_excerpts: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+content_selector: div.post-content

@@ -94,7 +94,12 @@
     
     </footer>
 
-    <script src="{{ '/static/js/index.js' | relative_url }}" type="module"></script>
+    <script type="module">
+      import { convertTags } from '{{ "/static/js/index.js" | relative_url }}'
+      const contentSelector = '{{ site.content_selector }}'
+      console.log(contentSelector)
+      console.log(convertTags)
+    </script>
 
   </body>
 
