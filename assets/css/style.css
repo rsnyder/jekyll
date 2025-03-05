@@ -1,22 +1,4 @@
-iframe {
-  min-width: unset;
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  border: none;
-}
-
-iframe[src*="image"] {
-  aspect-ratio: 1.3;
-}
-
-iframe[src*="map"] {
-  aspect-ratio: 1 / 1 ;
-}
-
-iframe[src*="google-book"] {
-  aspect-ratio: 2 / 3.2 ;
-}
+@import 'ifc.css';
 
 @charset "UTF-8";
 .highlight .c {
