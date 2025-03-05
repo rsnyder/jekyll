@@ -1,7 +1,5 @@
 console.log('index.js');
 
-const isGHP = location.hostname.indexOf('github.io') > 0
-
 const classes = new Set('left right center medium small box-shadow'.split(' '))
 const components = {
   aichat: {
