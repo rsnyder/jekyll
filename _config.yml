@@ -18,4 +18,4 @@ minima:
     - about.md
 
   # Set to `true` to show excerpts on the homepage.
-  show_excerpts: false
+  show_excerpts: true
