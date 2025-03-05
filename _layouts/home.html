@@ -32,9 +32,12 @@ layout: base
           </a>
         </h3>
         {%- if site.show_excerpts -%}
-          <!-- {{ post.excerpt }} -->
-          {% assign first_paragraph = post.content | split: '<p>' | slice: 1 | first | split: '</p>' | first %}
-          {{ post.description || first_paragraph }}
+          {%- if post.description -%}
+            {% assign excerpt = post.description %}
+          {% else %}
+            {% assign excerpt = post.content | split: '<p>' | slice: 1 | first | split: '</p>' | first %}
+          {%- endif -%}
+          {{ excerpt }}
         {%- endif -%}
       </li>
       {%- endfor -%}
