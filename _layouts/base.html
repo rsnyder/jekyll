@@ -96,9 +96,10 @@
 
     <script type="module">
       import { restructure, makeEntityPopups } from 'https://ifc.juncture-digital.org/js/index.js'
-      const content = document.querySelector('{{ site.content_selector }}')
+      const contentSelector = '{{ site.content_selector }}'
+      const content = document.querySelector(contentSelector)
       console.log(content)
-      restructure(content)
+      convertTags(content)
     </script>
 
   </body>
