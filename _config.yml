@@ -1,15 +1,12 @@
-title: Jekyll Website Template
+title: Website Title
+description: >
+  Website Description
 author:
   name: GitHub User
   email: your-email@domain.com
 
-description: >
-  Jekyll Website Template.
-
 nav_pages:
   - about.md
-
-# Set to `true` to show excerpts on the homepage.
 show_excerpts: true
 
 plugins:
