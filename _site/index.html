@@ -22,11 +22,7 @@
 {"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"GitHub User"},"description":"Jekyll Website Template.","headline":"Jekyll Website Template","name":"Jekyll Website Template","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
-    <link rel="stylesheet" href="/static/css/index.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jekyll Website Template" /><script>
-      window.contentSelector = 'div.post-content'
-      console.log(`contentSelector: ${window.contentSelector}`)
-    </script>
-  </head>
+    <link rel="stylesheet" href="/static/css/index.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jekyll Website Template" /></head>
 
   <body>
 
@@ -105,15 +101,12 @@
       </div>
     
     </footer>
-
-    <!--
-    <script type="module" src="https://ifc.juncture-digital.org/js/index.js"></script>
-    -->
+    
     <script>
+      window.contentSelector = 'div.post-content'
       let ifcScript = document.createElement('script')
-      ifcScript.src = location.hostname === 'localhost' ? 'http://localhost:8080/js/index.js': 'https://ifc.juncture-digital.org/js/index.js'
+      ifcScript.src = `${location.hostname === 'localhost' ? 'http://localhost:3000': 'https://ifc.juncture-digital.org'}/js/index.js`
       ifcScript.type = 'module'
-      console.log(ifcScript.src)
       document.body.appendChild(ifcScript)
     </script>
   </body>

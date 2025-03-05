@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
     <link rel="stylesheet" href="{{ '/static/css/index.css' | relative_url }}">
     {%- feed_meta -%} 
-    <script>
-      window.contentSelector = '{{ site.content_selector }}'
-      console.log(`contentSelector: ${window.contentSelector}`)
-    </script>
   </head>
 
   <body>
@@ -97,15 +93,12 @@
       </div>
     
     </footer>
-
-    <!--
-    <script type="module" src="https://ifc.juncture-digital.org/js/index.js"></script>
-    -->
+    
     <script>
+      window.contentSelector = '{{ site.content_selector }}'
       let ifcScript = document.createElement('script')
-      ifcScript.src = location.hostname === 'localhost' ? 'http://localhost:8080/js/index.js': 'https://ifc.juncture-digital.org/js/index.js'
+      ifcScript.src = `${location.hostname === 'localhost' ? 'http://localhost:3000': 'https://ifc.juncture-digital.org'}/js/index.js`
       ifcScript.type = 'module'
-      console.log(ifcScript.src)
       document.body.appendChild(ifcScript)
     </script>
   </body>
