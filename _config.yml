@@ -34,7 +34,7 @@ minima:
   # solarized-light	   Light variant of solarized color scheme.
   # solarized-dark	   Dark variant of solarized color scheme.
   # solarized	         Adaptive skin for solarized color scheme skins.
-  skin: classic
+  skin: solarized
 
   # If you want to link only specific pages in the site-navigation, use this and list
   # the `path` property (as represented via Liquid) of the pages in the order they should
