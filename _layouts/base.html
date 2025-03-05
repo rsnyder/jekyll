@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
     <link rel="stylesheet" href="{{ '/static/css/index.css' | relative_url }}">
     {%- feed_meta -%} 
+    <script>
+      window.contentSelector = '{{ site.content_selector }}'
+      console.log(`contentSelector: ${window.contentSelector}`)
+    </script>
   </head>
 
   <body>
@@ -95,29 +99,15 @@
     </footer>
 
     <!--
-    <script>window.contentSelector = '{{ site.content_selector }}'</script>
     <script type="module" src="https://ifc.juncture-digital.org/js/index.js"></script>
     -->
-    <script type="module">
-      window.contentSelector = '{{ site.content_selector }}'
-      // const ifcServer = location.hostname === 'localhost' ? 'http://localhost:8080' : 'https://ifc.juncture-digital.org'
-      // import 'https://ifc.juncture-digital.org/js/index.js'
-      console.log(`site.baseurl={{ site.baseurl }}`)
-      {%- if site.baseurl %}
-        import 'https://ifc.juncture-digital.org/js/index.js'
-      {%- else %}
-        import 'http://localhost:8080/js/index.js'
-      {%- endif -%}
-      /*
-      const content = document.querySelector('{{ site.content_selector }}')
-      if (content) {
-        const restructured = restructure(content)
-        convertTags(restructured)
-        content.replaceWith(restructure(restructured))
-      }
-      */
+    <script>
+      let ifcScript = document.createElement('script')
+      ifcScript.src = location.hostname === 'localhost' ? 'http://localhost:8080/js/index.js': 'https://ifc.juncture-digital.org/js/index.js'
+      ifcScript.type = 'module'
+      console.log(ifcScript.src)
+      document.body.appendChild(ifcScript)
     </script>
-
   </body>
 
 </html>
