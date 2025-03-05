@@ -95,13 +95,15 @@
     </footer>
 
     <script type="module">
-      import { restructure, convertTags, makeEntityPopups } from 'https://ifc.juncture-digital.org/js/index.js'
+      import 'https://ifc.juncture-digital.org/js/index.js'
+      /*
       const content = document.querySelector('{{ site.content_selector }}')
       if (content) {
         const restructured = restructure(content)
         convertTags(restructured)
         content.replaceWith(restructure(restructured))
       }
+      */
     </script>
 
   </body>
