@@ -1,0 +1,65 @@
+iframe[src*="image"],
+iframe[src*="map"],
+iframe[src*="google-book"] {
+  min-width: unset;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border: none;
+}
+
+iframe[src*="image"] {
+  aspect-ratio: 1.3;
+}
+
+iframe[src*="map"] {
+  aspect-ratio: 1 / 1 ;
+}
+
+iframe[src*="google-book"] {
+  aspect-ratio: 2 / 3.2 ;
+}
+
+@media (min-width: 600px) {
+
+  .fill {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .left {
+    float: left;
+    margin-right: 1em;
+  }
+
+  .right {
+    float: right;
+    margin-left: 1em;
+    display: flow-root;
+  }
+
+  .left, .right {
+    width: 50% !important;
+    margin-bottom: .5em;
+    /* display: flow-root; */
+    max-width: 600px;
+  }
+
+  .center {
+      display: block;
+      margin: 0 auto;
+  }
+
+  .box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  }
+
+  .medium {
+    width: 50% !important;
+  }
+
+  .small {
+    width: 33% !important;
+  }
+
+}

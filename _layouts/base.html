@@ -94,12 +94,21 @@
     
     </footer>
 
+    <!--
     <script>window.contentSelector = '{{ site.content_selector }}'</script>
     <script type="module" src="https://ifc.juncture-digital.org/js/index.js"></script>
-    <script>
-      /*
+    -->
+    <script type="module">
       window.contentSelector = '{{ site.content_selector }}'
-      import 'https://ifc.juncture-digital.org/js/index.js'
+      // const ifcServer = location.hostname === 'localhost' ? 'http://localhost:8080' : 'https://ifc.juncture-digital.org'
+      // import 'https://ifc.juncture-digital.org/js/index.js'
+      console.log(`site.baseurl={{ site.baseurl }}`)
+      {%- if site.baseurl %}
+        import 'https://ifc.juncture-digital.org/js/index.js'
+      {%- else %}
+        import 'http://localhost:8080/js/index.js'
+      {%- endif -%}
+      /*
       const content = document.querySelector('{{ site.content_selector }}')
       if (content) {
         const restructured = restructure(content)
