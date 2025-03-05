@@ -1,5 +1,57 @@
 console.log('index.js');
 
+const isGHP = location.hostname.indexOf('github.io') > 0
+
+const classes = new Set('left right center medium small box-shadow'.split(' '))
+const components = {
+  aichat: {
+    booleans: 'nocaption',
+    positional: 'model'
+  },
+  'google-book': {
+    booleans: 'nocaption',
+    positional: 'id caption'
+  },
+  header: {
+    booleans: '',
+    positional: '',
+    disabled: true
+  },
+  'ia-book': {
+    booleans: 'cover nocaption showannos static',
+    positional: 'id caption'
+  },
+  'iiif-tify': {
+    booleans: 'cover nocaption',
+    positional: 'manifest caption'
+  },
+  'iiif-juncture': {
+    booleans: 'cover nocaption showannos static',
+    positional: 'src caption'
+  },
+  image: {
+    booleans: 'nocaption',
+    positional: 'src label'
+  },
+  map: {
+    booleans: 'marker nocaption',
+    positional: 'center zoom caption'
+  },
+  video: {
+    booleans: 'nocaption',
+    positional: 'src caption',
+    disabled: true
+  }
+}
+const tagMap = {}
+Object.entries(components).forEach(([tag, attrs]) => {
+  tagMap[tag] = { 
+    booleans : new Set((attrs.booleans || '').split(' ').filter(s => s)),
+    positional: (attrs.positional || '').split(' ').filter(s => s),
+    disabled: attrs.disabled || false
+  }
+})
+
 const camelToKebab = (input) => input.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 const parseCodeEl = (el) => {
   let tokens = []
